@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" id="linkEstilos">
+    <link rel="stylesheet" href="style-black.css" id="linkEstilosBlack">
+    <title>Tabelas</title>
+</head>
+
+<body>
+    <table>
+        <caption>Funcionarios</caption>
+        <thead>
+            <tr>
+                <th>ID Funcionario</th>
+                <th>Nome do Funcionario</th>
+                <th>Cargo</th>
+                <th>Empresa</th>
+                <th>Email</th>
+                <th>Possui cracha?</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>233666</td>
+                <td>Zé da manga</td>
+                <td>Gerente de TI</td>
+                <td>IBM</td>
+                <td>zedamanga@ibm.com</td>
+                <td>sim</td>
+            </tr>
+
+            <tr>
+                <td>200466</td>
+                <td>Away</td>
+                <td>Analista de makerting sênior</td>
+                <td>FORD</td>
+                <td>away01@ford.com</td>
+                <td>sim</td>
+            </tr>
+
+            <tr>
+                <td>456211</td>
+                <td>Cleiton Rasta</td>
+                <td>Porteiro</td>
+                <td>SENAI</td>
+                <td>cleitonrasta@senai.com</td>
+                <td>sim</td>
+            </tr>
+
+            <tr>
+                <td>112456</td>
+                <td>Diogo Defante</td>
+                <td>Gestor de equipes</td>
+                <td>CBC</td>
+                <td>diogodefante@cbc.com</td>
+                <td>sim</td>
+            </tr>
+            <tr>
+                <td>212333</td>
+                <td>Thiago Ventura</td>
+                <td>CEO</td>
+                <td>MADZA</td>
+                <td>thiagoventura@madza.com</td>
+                <td>sim</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" id="botaoEstilo">Tema escuro</button>
+    <script>
+        function toggleEstilos() {
+            const linkEstilos = document.querySelector('#linkEstilos');
+            const linkBlack = document.querySelector('#linkEstilosBlack');
+
+            if (linkEstilos.hasAttribute('disabled')) {
+                linkEstilos.removeAttribute('disabled');
+                linkBlack.setAttribute('disabled', '');
+                botao.innerHTML = "Tema escuro";
+
+
+
+            } else {
+                linkBlack.removeAttribute('disabled');
+                linkEstilos.setAttribute('disabled', '');
+                botao.innerHTML = "Tema claro";
+            }
+        }
+
+        const botao = document.querySelector('#botaoEstilo');
+        botao.addEventListener('click', toggleEstilos);
+    </script>
+
+</body>
+
+</html>
