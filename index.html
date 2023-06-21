@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" id="linkEstilos">
-    <link rel="stylesheet" href="style-black.css" id="linkEstilosBlack">
     <title>Tabelas</title>
 </head>
 
@@ -70,28 +69,27 @@
             </tr>
         </tbody>
     </table>
-    <button type="button" id="botaoEstilo">Tema escuro</button>
+    <button type="button" id="btnAlterarTema">Tema escuro</button>
     <script>
-        function toggleEstilos() {
-            const linkEstilos = document.querySelector('#linkEstilos');
-            const linkBlack = document.querySelector('#linkEstilosBlack');
+        const elementoRaiz = document.documentElement;
 
-            if (linkEstilos.hasAttribute('disabled')) {
-                linkEstilos.removeAttribute('disabled');
-                linkBlack.setAttribute('disabled', '');
-                botao.innerHTML = "Tema escuro";
+        const temaAtual = localStorage.getItem('data-theme') ? localStorage.getItem('data-theme') : 'claro';
 
+        elementoRaiz.setAttribute('data-theme', temaAtual);
 
+        document.querySelector('#btnAlterarTema').addEventListener('click', () => {
 
+            if (elementoRaiz.getAttribute('data-theme') === 'claro') {
+                elementoRaiz.setAttribute('data-theme', 'escuro');
+                localStorage.setItem('data-theme', 'escuro');
             } else {
-                linkBlack.removeAttribute('disabled');
-                linkEstilos.setAttribute('disabled', '');
-                botao.innerHTML = "Tema claro";
+                elementoRaiz.setAttribute('data-theme', 'claro');
+                localStorage.setItem('data-theme', 'claro');
             }
-        }
 
-        const botao = document.querySelector('#botaoEstilo');
-        botao.addEventListener('click', toggleEstilos);
+        });
+
+
     </script>
 
 </body>

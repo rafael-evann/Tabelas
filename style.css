@@ -5,6 +5,17 @@
     font-family: 'Arial', sans-serif;
     font-size: 11pt;
 }
+:root {
+    --background-color: #A7ECEE;
+    --primary-color: #9AC5F4;
+    --secondary-color: #740000;
+}
+
+[data-theme="escuro"] {
+    --background-color: #001C30;
+    --primary-color: #176B87;
+    --secondary-color: #9DB2BF;
+}
 
 body {
     height: 100vh;
@@ -12,6 +23,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition:background .5ms;
 }
 
 h1 {
@@ -22,7 +34,7 @@ h1 {
 table {
     border-spacing: 0;
     border-collapse: collapse;
-    box-shadow: 10px 10px 8px #A7ECEE;
+    box-shadow: 10px 10px 8px var(--primary-color);
 }
 
 caption {
@@ -32,18 +44,19 @@ caption {
 }
 
 tbody>tr:nth-child(odd) {
-    background-color:#9AC5F4;
+    background-color:var(--background-color);
 }
 
 tbody>tr:nth-child(even),
 thead>tr,
 tfoot>tr {
-    background-color:#99DBF5;
+    background-color:var(--primary-color);
 }
 
 td,
 th {
     padding: 15px 20px;
+    color:var(--secondary-color);
 }
 
 th {
